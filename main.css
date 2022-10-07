@@ -4,6 +4,59 @@
     padding: 0;
 }
 
+.navbar a{
+    padding: 20px;
+    font-family: monospace;
+    text-decoration: none;
+    color: azure;
+    opacity: 1 !important;
+}
+
+.navbar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height:40px;
+    text-align: right;
+    font-size: 30px;
+    padding-left: 5px;
+    background-color: rgba(15, 17, 17, 0.5);
+    display: block;
+    
+}
+
+.pusbal{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-top: 50px;
+    padding: 0 20px;
+    height: 90%;
+}
+.pusbal div{
+    background-color:rgba(15, 17, 17, 0.5) ;
+    border-radius: 15px;
+}
+.afk{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.runs{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#news{
+    grid-column: span 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.something{
+    grid-column-start:5 ;
+}
+
 Body {
     font-family: 'lato';
     background-color: #000000 ;
@@ -12,10 +65,11 @@ Body {
 
 h1 {
     color: rgb(255, 255, 255);
-    font-size: 148px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-transform: uppercase;
     text-align: center;
-    padding-top: 40vh;
+    padding-top: 10px;
     text-shadow: 0 0 10 px rgba(red, green, blue, alpha);
     z-index: 9999;
 }
@@ -27,4 +81,8 @@ h1 {
     bottom: 0;
     right: 0;
     z-index: -1;
+}
+
+p{
+    color: white;
 }
