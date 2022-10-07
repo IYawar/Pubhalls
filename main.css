@@ -47,6 +47,11 @@
     padding-top: 5px;
     
 }
+.navbar img{
+    position: absolute;
+    width: 50px;
+    left: 2%
+}
 
 .pusbal{
     display: grid;
