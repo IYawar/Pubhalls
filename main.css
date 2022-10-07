@@ -10,26 +10,54 @@
     text-decoration: none;
     color: azure;
     opacity: 1 !important;
+    position: relative;
+}
+.navbar a::before{
+    content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #BF52E1;
+  bottom: 0;
+  left: 0%;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .3s ease-in-out;
+}
+
+.navbar a:hover{
+    color: #BF52E1;
+}
+.navbar a:hover::before{
+    transform-origin: center;
+    transform: scaleX(1);
 }
 
 .navbar{
     position: absolute;
     top: 0;
     width: 100%;
-    height:40px;
+    height:50px;
     text-align: right;
     font-size: 30px;
     padding-left: 5px;
     background-color: rgba(15, 17, 17, 0.5);
     display: block;
+    padding-top: 5px;
     
+}
+.navbar img{
+    position: absolute;
+    width: 50px;
+    left: 2%
 }
 
 .pusbal{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-    margin-top: 50px;
+    gap: 20px;
+    margin-top: 65px;
     padding: 0 20px;
     height: 90%;
 }
