@@ -50,13 +50,14 @@
     padding-top: 5px;
     
 }
-.navbar img{
+.navbar img, .small img{
     position: absolute;
     width: 50px;
     left: 2%
 }
 
 Body {
+    overflow: hidden;
     font-family: 'lato';
     background-color: #000000 ;
     height: 100vh;
@@ -74,7 +75,7 @@ h1 {
 }
 
 .first-halls{
-    font-size: 55px;
+    font-size: 65px;
     padding-top: 65px;
     padding-bottom: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -88,7 +89,91 @@ h1 {
     right: 0;
     z-index: -1;
 }
+.small{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    .navbar{
+        display: none;
+    }
 
+    .small{
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height:50px;
+        text-align: right;
+        padding-left: 5px;
+        background-color: rgba(15, 17, 17, 0.5);
+        padding-top: 5px;
+    }
+    .dbut{
+        background-color: #22012c;
+        color: white;
+        padding: 13px;
+        width: 120px;
+        border: none;
+        position: relative;
+    }
+
+    
+    .drop-content{
+        display: none;
+        position: absolute;
+        background-color: #3a014b;
+        min-width: 120px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius:1vw ;
+        
+        
+    }
+    .drop-content a{
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        
+        
+    }
+    .drop-content a:hover{
+        background-color: #7f14a0;
+    }
+    .show{
+        display: block;
+        right: 0;
+        position: absolute;
+        text-align: center;
+        transform: translateY(0px)
+        
+    }
+    .first-halls{
+        font-size: 50px !important;
+    }
+    p{
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+    }
+}
 p{
     color: white;
+}
+::-webkit-scrollbar{
+    width: 1em;
+}
+
+::-webkit-scrollbar-track{
+    background: #270033;
+    border-radius: 100vw;
+    margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #56076e;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #440d55;
 }
