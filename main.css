@@ -124,6 +124,37 @@ h1 {
 .small{
     display: none;
 }
+.scaler{
+    display: none;
+}
+@media only screen and (max-width: 1400px){
+    .pusbal{
+        display: none;
+    }
+    .scaler{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 15px;
+        padding: 0 20px;
+        height: fit-content;
+       
+    }
+    .scaler div{
+        background-color:rgba(15, 17, 17, 0.5) ;
+        border-radius: 15px;
+    }
+    .news{
+        grid-row-start: 1 !important;
+        grid-row-end: 2 !important;
+    }
+    .servers{
+        grid-column-start:3 !important ;
+    }
+    .something{
+        grid-column-start:4 !important ;
+    }
+}
 @media only screen and (max-width: 600px){
     .navbar{
         display: none;
