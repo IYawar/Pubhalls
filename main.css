@@ -38,7 +38,7 @@
 }
 
 .navbar{
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     height:50px;
@@ -114,7 +114,7 @@ h1 {
 }
 
 #bg {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
@@ -144,25 +144,115 @@ h1 {
         background-color:rgba(15, 17, 17, 0.5) ;
         border-radius: 15px;
     }
+    .afk{
+        grid-row-end: 3 !important;
+    }
     .news{
         grid-row-start: 1 !important;
         grid-row-end: 2 !important;
+        height: 350px;
     }
     .servers{
         grid-column-start:3 !important ;
+        height: 250px;
     }
     .something{
         grid-column-start:4 !important ;
     }
 }
+@media only screen and (max-width: 1100px){
+    body{
+        overflow: scroll;
+    }
+    .scaler{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 4;
+        gap: 20px;
+        margin-top: 15px;
+        padding: 0 20px;
+        height: fit-content;
+    }
+    .afk{
+        grid-row-start: 1 !important;
+        grid-row-end: 3 !important;
+        grid-column-start: 1 !important;
+        grid-column-end: 3 !important;
+        height: 500px;
+        
+    }
+    .runs{
+        grid-row-start: 1 !important;
+        grid-row-end: 3 !important;
+        grid-column-start: 3 !important;
+        grid-column-end: 5 !important;
+    }
+    .news{
+        grid-row-start: 3 !important;
+        grid-row-end: 4 !important;
+        height: 350px;
+    }
+    .servers{
+        grid-row-start:4 !important;
+        grid-column-start: 2 !important;
+        grid-column-end: 4 !important;
+    }
+    .something{
+        grid-row-start:3 !important ;
+        grid-column-start: 3 !important;
+        grid-column-end: 5 !important;
+    }
+}
 @media only screen and (max-width: 600px){
+    .scaler{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 20px;
+        margin-top: 15px;
+        padding: 0 20px;
+        height: fit-content;
+    }
+    .afk{
+        grid-row-start: 1 !important;
+        grid-row-end: 2 !important;
+        grid-column-start: 1 !important;
+        grid-column-end: 1 !important;
+        height: 400px;
+        
+    }
+    .runs{
+        grid-row-start: 2 !important;
+        grid-row-end: 3 !important;
+        grid-column-start: 1 !important;
+        grid-column-end: 1 !important;
+        height: 400px;
+       
+    }
+    .news{
+        grid-row-start: 3 !important;
+        grid-row-end: 4 !important;
+        grid-column-start: 1 !important;
+        grid-column-end: 1 !important;
+        height: 400px;
+    }
+    .servers{
+        grid-row-start:4 !important;
+        grid-column-start: 1 !important;
+        grid-column-end: 1 !important;
+       
+    }
+    .something{
+        grid-row-start:5 !important ;
+        grid-column-start: 1 !important;
+        grid-column-end: 1 !important;
+    }
     .navbar{
         display: none;
     }
 
     .small{
-        display: inline-block;
-        position: absolute;
+        display: block;
+        position: fixed;
         top: 0;
         width: 100%;
         height:50px;
