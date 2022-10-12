@@ -89,8 +89,34 @@ h1 {
     right: 0;
     z-index: -1;
 }
+.box{
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    background-color: rgba(15, 17, 17, 0.5) ;
+    margin: 0 2.5%;
+    overflow-y: scroll;
+}
+.guide-name{
+    font-size: 35px;
+    text-transform: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.video{
+    position: auto;
+    width: 800px;
+    min-height: 450px;
+    margin: 0 auto;
+   
+}
 .small{
     display: none;
+}
+@media only screen and (max-width: 850px){
+    .video{
+        width: 600px;
+    }
 }
 @media only screen and (max-width: 600px){
     .navbar{
@@ -154,6 +180,13 @@ h1 {
     p{
         padding-left: 5% !important;
         padding-right: 5% !important;
+    }
+    .video{
+        width: 400px;
+        min-height: 370px;
+    }
+    .guide-name{
+        font-size: 25px ;
     }
 }
 p{
