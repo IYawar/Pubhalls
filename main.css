@@ -121,15 +121,23 @@ h1 {
     right: 0;
     z-index: -1;
 }
+.server-list{
+    display: flex;
+    flex-direction: column;
+
+}
+
 .dn{
     box-shadow: inset 0 0 0 0 #BF52E1;
-    text-decoration: none;
+    text-decoration: none ;
     color: #BF52E1;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    font-size: 2rem;
 }
 .dn:hover {
-    box-shadow: inset 100px 0 0 0 #BF52E1;
+    box-shadow: inset 125px 0 0 0 #BF52E1;
     color: white;
+    justify-content: right;
   }
 .small{
     display: none;
