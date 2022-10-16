@@ -13,14 +13,30 @@ window.onclick = function(event) {
         }
     }
 }
-
+let apiLink = "https://a.vibot.tech:3002/api/afkchecks"
 async function getdata(){
     const response = await fetch("https://a.vibot.tech:3002/api/afkchecks")
     const data = await response.json()
-    
-    document.getElementById('afk-test').textContent = afk
+  return data  
 }
 getdata()
 
-setInterval(getdata, 3000)
-console.log(getdata())
+window.onload = async (event) => {
+    let activeAfk = [] ,activeRun = []
+    let data = await getdata()
+    for(let i in data){
+        if (data[i].active) activeRun.push(data[i])
+        else activeAfk.push(data[i])
+    }
+
+    function RenderAfk (afkCheck, active){
+        let started
+        if (afkCheck.started) started = Math.abs((Data.now() - afkCheck.started) / 1000)
+        let rectang = document.createElement('div')
+        if (active) return {
+
+        }
+    }
+    console.log(data)
+}
+
