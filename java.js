@@ -29,19 +29,23 @@ window.onload = async (event) => {
         if (data[i].active) activeRun.push(data[i])
         else activeAfk.push(data[i])
     }
-    let leader = data.leaderNick
+    var leader = data.leaderNick
+    if (data && Object.keys(data).length){
+        setInterval(RenderAfk(data, true), 3000)
+        setInterval(RenderAfk(data, false), 3000)
     function RenderAfk (afkCheck, active){
         let started
         let rectang = document.createElement("div")
         let afk = document.getElementById("pend")
         if (afkCheck.started) started = Math.abs((Data.now() - afkCheck.started) / 1000)
         if (active) {
-            rectang.innerHTML = "<strong3>Ayo mr.White check this out</strong>"
+            rectang.innerHTML = "<strong class='white'>Ayo mr.White check this out</strong>";
             afk.append(rectang)
-            console.log(leader)
+            console.log(data.leaderNick)
+        }else {
+            rectang.innerHTML = "<strong class='white'>Bruh</strong>";
+            afk.append(rectang)
         }
-    
-}
-setInterval(RenderAfk(data, true), 3000)
-setInterval(RenderAfk(data, false), 3000)
+        }
+    }
 }
