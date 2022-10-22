@@ -3,6 +3,24 @@
     margin: 0;
     padding: 0;
 }
+::-webkit-scrollbar{
+    width: 1em;
+}
+
+::-webkit-scrollbar-track{
+    background: #270033;
+    border-radius: 100vw;
+    margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #56076e;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #440d55;
+}
 
 .navbar a{
     padding: 20px;
@@ -76,6 +94,7 @@
 .runs{
     grid-row-start: 1;
     grid-row-end: 3;
+    overflow-y: scroll;
 }
 
 #news{

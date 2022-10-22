@@ -14,38 +14,41 @@ window.onclick = function(event) {
     }
 }
 let apiLink = "https://a.vibot.tech:3002/api/afkchecks"
-async function getdata(){
+async function getdata() {
     const response = await fetch("https://a.vibot.tech:3002/api/afkchecks")
     const data = await response.json()
-  return data  
+    return data
 }
-getdata()
 
-window.onload = async (event) => {
-    let activeAfk = [] ,activeRun = []
+window.onload = leggo
+async function leggo() {
+    let activeAfk = [],activeRun = []
     let data = await getdata()
     console.log(data)
-    for(let i in data){
+    for (let i in data) {
         if (data[i].active) activeRun.push(data[i])
         else activeAfk.push(data[i])
-    }
-    var leader = data.leaderNick
-    if (data && Object.keys(data).length){
-        setInterval(RenderAfk(data, true), 3000)
-        setInterval(RenderAfk(data, false), 3000)
-    function RenderAfk (afkCheck, active){
-        let started
-        let rectang = document.createElement("div")
-        let afk = document.getElementById("pend")
-        if (afkCheck.started) started = Math.abs((Data.now() - afkCheck.started) / 1000)
-        if (active) {
-            rectang.innerHTML = "<strong class='white'>Ayo mr.White check this out</strong>";
-            afk.append(rectang)
-            console.log(data.leaderNick)
-        }else {
-            rectang.innerHTML = "<strong class='white'>Bruh</strong>";
-            afk.append(rectang)
-        }
-        }
+        let leader = data[i].leaderNick
+        console.log(leader)
+
+            function RenderAfk(afkCheck, active) {
+                let started
+                let rectang = document.createElement("div")
+                let afk = document.getElementById("pend")
+                let run = document.getElementById("run")
+                if (active)  {
+                    rectang.innerHTML = `<strong class='white'>Ayo mr ${afkCheck.leaderNick} check this out</strong>`;
+                    afk.append(rectang)
+                } else {
+                    rectang.innerHTML = `<strong class='white'>Bruh by ${afkCheck.leaderNick} </strong>`;
+                    run.append(rectang)
+                }
+            }
+            if (data && Object.keys(data).length) {
+            RenderAfk(data[i], data[i].active)
+            }
     }
 }
+
+setInterval(leggo, 3000)
+
