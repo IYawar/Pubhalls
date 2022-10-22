@@ -31,23 +31,23 @@ async function leggo() {
         let leader = data[i].leaderNick
         console.log(leader)
 
-            function RenderAfk(afkCheck, active) {
-                let started
-                let rectang = document.createElement("div")
-                let afk = document.getElementById("pend")
-                let run = document.getElementById("run")
-                if (active)  {
-                    rectang.innerHTML = `<strong class='white'>Ayo mr ${afkCheck.leaderNick} check this out</strong>`;
-                    afk.append(rectang)
-                } else {
-                    rectang.innerHTML = `<strong class='white'>Bruh by ${afkCheck.leaderNick} </strong>`;
-                    run.append(rectang)
-                }
-            }
-            if (data && Object.keys(data).length) {
-            RenderAfk(data[i], data[i].active)
-            }
     }
+    if (data && Object.keys(data).length) {
+        function RenderAfk(afkCheck, active) {
+            let started
+            let rectang = document.createElement("div")
+            let afk = document.getElementById("pend")
+            let run = document.getElementById("run")
+            if (active)  {
+                rectang.innerHTML = `<strong class='white'>Ayo mr ${afkCheck.leaderNick} check this out</strong>`;
+                afk.append(rectang)
+            } else {
+                rectang.innerHTML = `<strong class='white'>Bruh by ${afkCheck.leaderNick} </strong>`;
+                run.append(rectang)
+            }
+        }
+        RenderAfk(data[i], data[i].active)
+        }
 }
 
 setInterval(leggo, 3000)
