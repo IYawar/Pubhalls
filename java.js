@@ -25,30 +25,26 @@ async function leggo() {
     let activeAfk = [],activeRun = []
     let data = await getdata()
     console.log(data)
-    for (let i in data) {
-        if (data[i].active) activeRun.push(data[i])
-        else activeAfk.push(data[i])
-        let leader = data[i].leaderNick
-        console.log(leader)
-
+    for (let i of Object.values(data)) {
+        if (i.active) activeRun.push(i)
+        else activeAfk.push(i)
+        RenderAfk(i, i.active)
+        console.log(i.leaderNick)
+        
     }
-    if (data && Object.keys(data).length) {
-        function RenderAfk(afkCheck, active) {
-            let started
-            let rectang = document.createElement("div")
-            let afk = document.getElementById("pend")
-            let run = document.getElementById("run")
-            if (active)  {
-                rectang.innerHTML = `<strong class='white'>Ayo mr ${afkCheck.leaderNick} check this out</strong>`;
-                afk.append(rectang)
-            } else {
-                rectang.innerHTML = `<strong class='white'>Bruh by ${afkCheck.leaderNick} </strong>`;
-                run.append(rectang)
-            }
-        }
-        RenderAfk(data[i], data[i].active)
-        }
 }
+let rectang = document.createElement("div")
+let afk = document.getElementById("pend")
+let run = document.getElementById("run")
 
 setInterval(leggo, 3000)
-
+function RenderAfk(afkCheck, active) {
+    if (active)  {
+        delete rectang
+        rectang.innerHTML = `<strong class='white'>Ayo mr ${afkCheck.leaderNick} check this out</strong>`;
+        afk.append(rectang)
+    } else {
+        rectang.innerHTML = `<strong class='white'>Bruh by ${afkCheck.leaderNick} </strong>`;
+        run.append(rectang)
+    }
+}

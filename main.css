@@ -1,28 +1,29 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 1em;
 }
 
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
     background: #270033;
     border-radius: 100vw;
     margin-block: 0.5em;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background: #56076e;
     border-radius: 100vw;
 }
 
-::-webkit-scrollbar-thumb:hover{
+::-webkit-scrollbar-thumb:hover {
     background: #440d55;
 }
 
-.navbar a{
+.navbar a {
     padding: 20px;
     font-family: monospace;
     text-decoration: none;
@@ -30,51 +31,56 @@
     opacity: 1 !important;
     position: relative;
 }
-.navbar a::before{
+
+.navbar a::before {
     content: '';
-  position: absolute;
-  width: 100%;
-  height: 4px;
-  border-radius: 4px;
-  background-color: #BF52E1;
-  bottom: 0;
-  left: 0%;
-  transform-origin: center;
-  transform: scaleX(0);
-  transition: transform .3s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #BF52E1;
+    bottom: 0;
+    left: 0%;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: #BF52E1;
 }
-.navbar a:hover::before{
+
+.navbar a:hover::before {
     transform-origin: center;
     transform: scaleX(1);
 }
-.current{
-    color:#BF52E1 !important;
+
+.current {
+    color: #BF52E1 !important;
 }
 
-.navbar{
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    height:50px;
+    height: 50px;
     text-align: right;
     font-size: 30px;
     padding-left: 5px;
     background-color: rgba(15, 17, 17, 0.5);
     display: block;
     padding-top: 5px;
-    
+
 }
-.navbar img, .small img{
+
+.navbar img,
+.small img {
     position: absolute;
     width: 50px;
     left: 2%
 }
 
-.pusbal{
+.pusbal {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
@@ -82,35 +88,37 @@
     padding: 0 20px;
     height: 80%;
 }
-.pusbal div{
-    background-color:rgba(15, 17, 17, 0.5) ;
+
+.pusbal div {
+    background-color: rgba(15, 17, 17, 0.5);
     border-radius: 15px;
 }
-.afk{
+
+.afk {
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
-.runs{
+.runs {
     grid-row-start: 1;
     grid-row-end: 3;
     overflow-y: scroll;
 }
 
-#news{
+#news {
     grid-column: span 2;
     grid-row-start: 1;
     grid-row-end: 3;
 }
 
-.something{
-    grid-column-start:5 ;
+.something {
+    grid-column-start: 5;
 }
 
 body {
     overflow: hidden;
     font-family: 'lato';
-    background-color: #000000 ;
+    background-color: #000000;
     height: 100vh;
 }
 
@@ -125,7 +133,7 @@ h1 {
     z-index: 9999;
 }
 
-.first-halls{
+.first-halls {
     font-size: 65px;
     padding-top: 65px;
     padding-bottom: 5px;
@@ -140,68 +148,81 @@ h1 {
     right: 0;
     z-index: -1;
 }
-.server-list{
+
+.server-list {
     display: flex;
     flex-direction: column;
 
 }
 
-.dn{
+.dn {
     box-shadow: inset 0 0 0 0 #BF52E1;
-    text-decoration: none ;
+    text-decoration: none;
     color: #BF52E1;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
     font-size: 2rem;
 }
+
 .dn:hover {
     box-shadow: inset 125px 0 0 0 #BF52E1;
     color: white;
     justify-content: right;
-  }
-.small{
+}
+
+.small {
     display: none;
 }
-.scaler{
+
+.scaler {
     display: none;
 }
-@media only screen and (max-width: 1400px){
-    .pusbal{
+
+@media only screen and (max-width: 1400px) {
+    .pusbal {
         display: none;
     }
-    .scaler{
+
+    .scaler {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         margin-top: 15px;
         padding: 0 20px;
         height: fit-content;
-       
+
     }
-    .scaler div{
-        background-color:rgba(15, 17, 17, 0.5) ;
+
+    .scaler div {
+        background-color: rgba(15, 17, 17, 0.5);
         border-radius: 15px;
     }
-    .afk{
+
+    .afk {
         grid-row-end: 3 !important;
     }
-    .news{
+
+    .news {
         grid-row-start: 1 !important;
         grid-row-end: 2 !important;
         height: 350px;
     }
-    .servers{
-        grid-column-start:3 !important ;
+
+    .servers {
+        grid-column-start: 3 !important;
         height: 250px;
     }
-    .something{
-        grid-column-start:4 !important ;
+
+    .something {
+        grid-column-start: 4 !important;
     }
 }
-@media only screen and (max-width: 1100px){
-    body{
+
+@media only screen and (max-width: 1100px) {
+    body {
         overflow: scroll;
     }
-    .scaler{
+
+    .scaler {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 4;
@@ -210,38 +231,44 @@ h1 {
         padding: 0 20px;
         height: fit-content;
     }
-    .afk{
+
+    .afk {
         grid-row-start: 1 !important;
         grid-row-end: 3 !important;
         grid-column-start: 1 !important;
         grid-column-end: 3 !important;
         height: 500px;
-        
+
     }
-    .runs{
+
+    .runs {
         grid-row-start: 1 !important;
         grid-row-end: 3 !important;
         grid-column-start: 3 !important;
         grid-column-end: 5 !important;
     }
-    .news{
+
+    .news {
         grid-row-start: 3 !important;
         grid-row-end: 4 !important;
         height: 350px;
     }
-    .servers{
-        grid-row-start:4 !important;
+
+    .servers {
+        grid-row-start: 4 !important;
         grid-column-start: 2 !important;
         grid-column-end: 4 !important;
     }
-    .something{
-        grid-row-start:3 !important ;
+
+    .something {
+        grid-row-start: 3 !important;
         grid-column-start: 3 !important;
         grid-column-end: 5 !important;
     }
 }
-@media only screen and (max-width: 600px){
-    .scaler{
+
+@media only screen and (max-width: 600px) {
+    .scaler {
         display: grid;
         grid-template-columns: repeat(1, 1fr) !important;
         gap: 20px;
@@ -249,56 +276,63 @@ h1 {
         padding: 0 20px;
         height: fit-content;
     }
-    .afk{
+
+    .afk {
         grid-row-start: 1 !important;
         grid-row-end: 2 !important;
         grid-column-start: 1 !important;
         grid-column-end: 1 !important;
         height: 400px;
-        
+
     }
-    .runs{
+
+    .runs {
         grid-row-start: 2 !important;
         grid-row-end: 3 !important;
         grid-column-start: 1 !important;
         grid-column-end: 1 !important;
         height: 400px;
-       
+
     }
-    .news{
+
+    .news {
         grid-row-start: 3 !important;
         grid-row-end: 4 !important;
         grid-column-start: 1 !important;
         grid-column-end: 1 !important;
         height: 400px;
     }
-    .servers{
-        grid-row-start:4 !important;
+
+    .servers {
+        grid-row-start: 4 !important;
         grid-column-start: 1 !important;
         grid-column-end: 1 !important;
-       
+
     }
-    .something{
-        grid-row-start:5 !important ;
+
+    .something {
+        grid-row-start: 5 !important;
         grid-column-start: 1 !important;
         grid-column-end: 1 !important;
     }
-    .navbar{
+
+    .navbar {
         display: none;
     }
 
-    .small{
+    .small {
         display: block;
         position: fixed;
         top: 0;
         width: 100%;
-        height:50px;
+        height: 50px;
         text-align: right;
         padding-left: 5px;
         background-color: rgba(15, 17, 17, 0.5);
         padding-top: 5px;
     }
-    .dbut{
+
+    .dbut {
         background-color: #22012c;
         color: white;
         padding: 13px;
@@ -307,52 +341,59 @@ h1 {
         position: relative;
     }
 
-    
-    .drop-content{
+
+    .drop-content {
         display: none;
         position: absolute;
         background-color: #3a014b;
         min-width: 120px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         z-index: 1;
-        border-radius:1vw ;
-        
-        
+        border-radius: 1vw;
+
+
     }
-    .drop-content a{
+
+    .drop-content a {
         color: white;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
-        
-        
+
+
     }
-    .drop-content a:hover{
+
+    .drop-content a:hover {
         background-color: #7f14a0;
     }
-    .show{
+
+    .show {
         display: block;
         right: 0;
         position: absolute;
         text-align: center;
         transform: translateY(0px)
-        
     }
-    .first-halls{
+
+    .first-halls {
         font-size: 50px !important;
     }
-    p{
+
+    p {
         padding-left: 5% !important;
         padding-right: 5% !important;
         font-size: 17px !important;
     }
 }
-p{
+
+p {
     color: white;
 }
-.discord{
+
+.discord {
     position: absolute;
 }
-.white{
+
+.white {
     color: white;
 }
