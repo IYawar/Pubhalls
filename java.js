@@ -30,8 +30,8 @@ async function leggo() {
         else activeAfk.push(data[i])
         let leader = data[i].leaderNick
         console.log(leader)
-
-    }
+        
+    }(i);
     if (data && Object.keys(data).length) {
         function RenderAfk(afkCheck, active) {
             let started
