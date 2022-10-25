@@ -41,10 +41,10 @@ setInterval(leggo, 3000)
 function RenderAfk(afkCheck, active) {
     delete rectang
     if (active)  {
-        rectang.innerHTML = `<strong class='white'>Ayo mr ${afkCheck.leaderNick} check this out</strong>`;
+        rectang.innerHTML = `<a href="${afkCheck.url} target="_blank" rel='noopener noreferrer'"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">30/45</p></div></a>`
         afk.append(rectang)
     } else {
-        rectang.innerHTML = `<strong class='white'>Bruh by ${afkCheck.leaderNick} </strong>`;
+        rectang.innerHTML = `<a href="${afkCheck.url} target="_blank" rel='noopener noreferrer'><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">30/45</p></div></a>`;
         run.append(rectang)
     }
 }
