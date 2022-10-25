@@ -39,8 +39,8 @@ let run = document.getElementById("run")
 
 setInterval(leggo, 3000)
 function RenderAfk(afkCheck, active) {
+    delete rectang
     if (active)  {
-        delete rectang
         rectang.innerHTML = `<strong class='white'>Ayo mr ${afkCheck.leaderNick} check this out</strong>`;
         afk.append(rectang)
     } else {
