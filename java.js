@@ -31,15 +31,14 @@ async function leggo() {
     
     console.log(data)
     for (let i of Object.values(data)) {
-        if (i.active) activeRun.push(i)
+        if (i.active === false) activeRun.push(i)
         else activeAfk.push(i)
-        activeAfk.map(afk => RenderAfk(i, i.active))
-        activeRun.map(afk => RenderAfk(i, i.false))
         //RenderAfk(i, i.active)
         console.log(i.leaderNick)
         
     }
-
+    activeAfk.forEach(afk => RenderAfk(afk, true))
+    activeRun.forEach(afk => RenderAfk(afk, false))
 
 
 function RenderAfk(afkCheck, active) {
@@ -48,7 +47,7 @@ function RenderAfk(afkCheck, active) {
         rectang.innerHTML = `<a href="${afkCheck.url}"" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
         afk.append(rectang)
     } else {
-        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`;
+        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
         run.append(rectang)
     }
 }
