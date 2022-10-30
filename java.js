@@ -33,38 +33,25 @@ async function leggo() {
     for (let i of Object.values(data)) {
         if (i.active === false) activeRun.push(i)
         else activeAfk.push(i)
-        //RenderAfk(i, i.active)
         console.log(i.leaderNick)
         
     }
     activeAfk.forEach(afk => RenderAfk(afk, true))
-    activeRun.forEach(afk => RenderAfk(afk, false))
+    activeRun.forEach(run => RenderAfk(run, false))
+    console.log(activeRun)
+    console.log(activeAfk)
+    console.log(run)
+    console.log(afk)
 
 
 function RenderAfk(afkCheck, active) {
  
     if (active)  {
-        rectang.innerHTML = `<a href="${afkCheck.url}"" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
+        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
         afk.append(rectang)
     } else {
         rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
         run.append(rectang)
     }
 }
-}setInterval(leggo, 3000)
-/*if (data && Object.keys(data).length) {
-    activeAfk.map(afk => RenderAfk(afk, true))
-    activeRun.map(afk => RenderAfk(afk, false))
-}
-}setInterval(leggo, 3000)
-*/
-/*function RenderAfk(afkCheck, active) {
-    for (let b = 0 ; b <= afkCheck.length; b++){
-     if (afkCheck[b].active)  {
-         rectang.innerHTML = `<a href="${afkCheck.url}"" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/45</p></div></a>`
-         afk.append(rectang)
-     } else if (afkCheck[b].active === false){
-         rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">${afkCheck.vcSize || '0'}/45</p></div></a>`;
-         run.append(rectang)
-     }
-     } */
+}setInterval(leggo, 30000)
