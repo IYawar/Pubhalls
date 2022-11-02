@@ -47,11 +47,13 @@ async function leggo() {
 function RenderAfk(afkCheck, active) {
  
     if (active)  {
-        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
+        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
         afk.append(rectang)
     } else {
-        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
+        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
         run.append(rectang)
     }
 }
 }setInterval(leggo, 30000)
+
+//${afkCheck.runType.runName}
