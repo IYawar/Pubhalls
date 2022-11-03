@@ -36,24 +36,26 @@ async function leggo() {
         console.log(i.leaderNick)
         
     }
-    activeAfk.forEach(afk => RenderAfk(afk, true))
-    activeRun.forEach(run => RenderAfk(run, false))
-    console.log(activeRun)
-    console.log(activeAfk)
-    console.log(run)
-    console.log(afk)
+    activeAfk.forEach(rAfk => RenderAfk(rAfk))
+    activeRun.forEach(rRun => RenderRun(rRun))
 
 
-function RenderAfk(afkCheck, active) {
- 
-    if (active)  {
-        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
-        afk.append(rectang)
-    } else {
-        rectang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
-        run.append(rectang)
-    }
+function RenderAfk(afkCheck) {
+
+    if (rectang === true) afk.removeChild(rectang)
+    rectang.innerHTML += `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
+    afk.append(rectang)
 }
-}setInterval(leggo, 30000)
+function RenderRun(afkCheck){
+    if (run.rectang === true) rectang.remove()
+    rectang.innerHTML += `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
+    run.append(rectang)
+}
+}setInterval(leggo, 3000)
 
 //${afkCheck.runType.runName}
+// } else {
+    //     delete run.rectang
+    //     rectang.innerHTML += `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
+    //     run.append(rectang)
+    // }
