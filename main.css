@@ -177,6 +177,42 @@ h1 {
 .scaler {
     display: none;
 }
+.void{
+    background: linear-gradient(
+        90deg,
+        rgb(66, 4, 165),
+        rgb(0, 0, 0)
+    ) !important;
+}
+.cult{
+    background: linear-gradient(
+        90deg,
+        rgb(175, 2, 2),
+        rgb(0, 0, 0)
+    ) !important;   
+}
+.shatters{
+    background: linear-gradient(
+        90deg,
+        rgb(6, 49, 4),
+        rgb(0, 0, 0)
+    ) !important;
+}
+.fungal{
+    background: linear-gradient(
+        90deg,
+        rgb(4, 40, 107),
+        rgb(0, 0, 0)
+    ) !important;
+}
+.nest{
+    background: linear-gradient(
+        90deg,
+        rgb(156, 72, 3),
+        rgb(0, 0, 0)
+    ) !important;
+}
+
 .afk a, .runs a{
     text-decoration: none;
 }
