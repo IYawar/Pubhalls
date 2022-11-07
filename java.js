@@ -21,8 +21,7 @@ async function getdata() {
 }
 
 window.onload = leggo
-let runTang = document.createElement("div")
-let afkTang = document.createElement("div")
+
 let afk = document.getElementById("pend")
 let run = document.getElementById("run")
 let boxes = document.getElementsByClassName("rbox")
@@ -37,20 +36,25 @@ async function leggo() {
         console.log(i.leaderNick)
         
     }
+     afk.innerHTML = ""
+     run.innerHTML = ""
     activeAfk.forEach(rAfk => RenderAfk(rAfk))
     activeRun.forEach(rRun => RenderRun(rRun))
 
 
 function RenderAfk(afkCheck) {
-
-    if (afkTang === true) afk.removeChild(afkTang)
-    afkTang.innerHTML += `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap}</p></div></a>`
+    
+    let afkTang = document.createElement("div")
+    afkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`
     afk.append(afkTang)
+    // if(afkCheck.runType.runName = "Void") afk.classList.add("void")
 }
 function RenderRun(afkCheck){
-    if  (run.hasChildNodes) run.removeChild(run.parentNode)
-    runTang.innerHTML += `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
+    let runTang = document.createElement("div")
+    let timeSince = Math.abs((Date.now() - afkCheck.endedAt) / 1000)
+    runTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="right">${Math.floor(timeSince / 60) || '0'}m ${Math.round(timeSince % 60) || '0'}s ago</p></div></a>`;
     run.append(runTang)
+    // if(afkCheck.runType.runName === "Void") afk.classList.add("void")
 }
 }setInterval(leggo, 3000)
 
