@@ -31,11 +31,11 @@ async function leggo() {
     let activeAfk = [],activeRun = []
     let data = await getdata()
     
-    console.log(data)
+    // console.log(data)
     for (let i of Object.values(data)) {
         if (i.active === false) activeRun.push(i)
         else activeAfk.push(i)
-        console.log(i.leaderNick)
+        // console.log(i.leaderNick)
         
     }
      afk.innerHTML = ""
@@ -51,7 +51,7 @@ async function leggo() {
 function RenderAfk(afkCheck) {
     
     let afkTang = document.createElement("div")
-    afkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`
+    afkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/</p></div></a>`//${afkCheck.runType.vcCap || '0'}
     afk.append(afkTang) 
     // if(afkCheck.runType.runName = "Void") afk.classList.add("void")
 }
@@ -66,7 +66,7 @@ function RenderRun(afkCheck){
 function sRenderAfk(afkCheck) {
 
     let safkTang = document.createElement("div")
-    safkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`
+    safkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/</p></div></a>`//${afkCheck.runType.vcCap || '0'}
     safk.append(safkTang)
     // if(afkCheck.runType.runName = "Void") afk.classList.add("void")
 }
@@ -78,7 +78,7 @@ function sRenderRun(afkCheck){
     srun.append(srunTang)
     // if(afkCheck.runType.runName === "Void") afk.classList.add("void")
 }
-}setInterval(leggo, 3000)
+}setInterval(leggo, 1500)
 
 //${afkCheck.runType.runName}
 // } else {
