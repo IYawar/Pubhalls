@@ -13,6 +13,7 @@ window.onclick = function(event) {
         }
     }
 }
+
 let apiLink = "https://a.vibot.tech:3002/api/afkchecks"
 async function getdata() {
     const response = await fetch("https://a.vibot.tech:3002/api/afkchecks")
@@ -31,12 +32,11 @@ async function leggo() {
     let activeAfk = [],activeRun = []
     let data = await getdata()
     
-    // console.log(data)
     for (let i of Object.values(data)) {
+        if ( i.leader != null){
         if (i.active === false) activeRun.push(i)
         else activeAfk.push(i)
-        // console.log(i.leaderNick)
-        
+        }
     }
      afk.innerHTML = ""
      safk.innerHTML = ""
@@ -51,38 +51,28 @@ async function leggo() {
 function RenderAfk(afkCheck) {
     
     let afkTang = document.createElement("div")
-    afkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/</p></div></a>`//${afkCheck.runType.vcCap || '0'}
+    afkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;")><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`//${afkCheck.runType.vcCap || '0'}
     afk.append(afkTang) 
-    // if(afkCheck.runType.runName = "Void") afk.classList.add("void")
 }
 function RenderRun(afkCheck){
 
     let runTang = document.createElement("div")
     let timeSince = Math.abs((Date.now() - afkCheck.endedAt) / 1000)
-    runTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="right">${Math.floor(timeSince / 60) || '0'}m ${Math.round(timeSince % 60) || '0'}s ago</p></div></a>`;
+    runTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;"><p class="left" >${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="right">${Math.floor(timeSince / 60) || '0'}m ${Math.round(timeSince % 60) || '0'}s ago</p></div></a>`;
     run.append(runTang)
-    // if(afkCheck.runType.runName === "Void") afk.classList.add("void")
+
 }
 function sRenderAfk(afkCheck) {
 
     let safkTang = document.createElement("div")
-    safkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/</p></div></a>`//${afkCheck.runType.vcCap || '0'}
+    safkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="mid">6:00</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`//${afkCheck.runType.vcCap || '0'}
     safk.append(safkTang)
-    // if(afkCheck.runType.runName = "Void") afk.classList.add("void")
 }
 function sRenderRun(afkCheck){
 
     let srunTang = document.createElement("div")
     let timeSince = Math.abs((Date.now() - afkCheck.endedAt) / 1000)
-    srunTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="right">${Math.floor(timeSince / 60) || '0'}m ${Math.round(timeSince % 60) || '0'}s ago</p></div></a>`;
+    srunTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;"><p class="left">${afkCheck.runType.runName} by ${afkCheck.leaderNick}</p><p class="right">${Math.floor(timeSince / 60) || '0'}m ${Math.round(timeSince % 60) || '0'}s ago</p></div></a>`;
     srun.append(srunTang)
-    // if(afkCheck.runType.runName === "Void") afk.classList.add("void")
 }
 }setInterval(leggo, 1500)
-
-//${afkCheck.runType.runName}
-// } else {
-    //     delete run.runTang
-    //     runTang.innerHTML += `<a href="${afkCheck.url}" target="_blank"><div class="rbox"><p class="left"> by ${afkCheck.leaderNick}</p><p class="mid">xx:xx</p><p class="right">something</p></div></a>`;
-    //     run.append(runTang)
-    // }
