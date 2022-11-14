@@ -72,7 +72,7 @@ function sRenderRun(afkCheck){
 
     let srunTang = document.createElement("div")
     let timeSince = Math.abs((Date.now() - afkCheck.endedAt) / 1000)
-    srunTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;"><p class="left">${afkCheck.runType.runName}</strong> by <strong>${afkCheck.leaderNick}</strong></p><p class="right">~since ${Math.floor(timeSince / 60) || '0'}m ${Math.round(timeSince % 60) || '0'}s ago</p></div></a>`;
+    srunTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;"><p class="left"><strong>${afkCheck.runType.runName}</strong> by <strong>${afkCheck.leaderNick}</strong></p><p class="right">~since ${Math.floor(timeSince / 60) || '0'}m ${Math.round(timeSince % 60) || '0'}s ago</p></div></a>`;
     srun.append(srunTang)
 }
 }setInterval(leggo, 1500)
