@@ -134,35 +134,42 @@ h1 {
         background-color: rgba(15, 17, 17, 0.5);
         padding-top: 5px;
     }
-    .dbut{
+    .dbut {
         background-color: #22012c;
         color: white;
         padding: 13px;
         width: 120px;
         border: none;
         position: relative;
+        border-radius: 2rem !important;
+    }
+    .dbut:hover{
+        background-color: #7f14a0 !important;
+        cursor: pointer;
+    }
+    .cover{
+        border-radius: 2rem !important;
     }
 
-    
-    .drop-content{
+    .drop-content {
         display: none;
         position: absolute;
-        background-color: #3a014b;
+        background-color: #22012c;
         min-width: 120px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         z-index: 1;
-        border-radius:1vw ;
-        
-        
+        border-radius: 2rem;
+        margin-top: 2px;
     }
-    .drop-content a{
+
+    .drop-content a {
         color: white;
         padding: 12px 16px;
         text-decoration: none;
         display: block;
-        
-        
-    }
+        border-radius: 2rem !important;
+    }   
+
     .drop-content a:hover{
         background-color: #7f14a0;
     }
