@@ -51,7 +51,7 @@ async function leggo() {
 function RenderAfk(afkCheck) {
     if (afkCheck.started) started = Math.abs((Date.now() - afkCheck.started) / 1000)
     let afkTang = document.createElement("div")
-    afkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;")><p class="left"><strong>${afkCheck.runType.runName}</strong> by <strong>${afkCheck.leaderNick}</strong></p><p class="mid">${Math.floor(afkCheck.timeLeft / 60) || 0}:${Math.round(afkCheck.timeLeft % 60) || 00}</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`//${afkCheck.runType.vcCap || '0'}
+    afkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color || "grey"}, black) !important;")><p class="left"><strong>${afkCheck.runType.runName}</strong> by <strong>${afkCheck.leaderNick}</strong></p><p class="mid">${Math.floor(afkCheck.timeLeft / 60) || 0}:${Math.round(afkCheck.timeLeft % 60) || 00}</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`//${afkCheck.runType.vcCap || '0'}
     afk.append(afkTang) 
 }
 function RenderRun(afkCheck){
@@ -65,7 +65,7 @@ function RenderRun(afkCheck){
 function sRenderAfk(afkCheck) {
     if (afkCheck.started) started = Math.abs((Date.now() - afkCheck.started) / 1000)
     let safkTang = document.createElement("div")
-    safkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color}, black) !important;"><p class="left"><strong>${afkCheck.runType.runName}</strong> by <strong>${afkCheck.leaderNick}</strong></p><p class="mid">${Math.floor(afkCheck.timeLeft / 60) || 0}:${Math.round(afkCheck.timeLeft % 60) || 00}</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`//${afkCheck.runType.vcCap || '0'}
+    safkTang.innerHTML = `<a href="${afkCheck.url}" target="_blank"><div class="rbox" style= "background : linear-gradient(90deg, ${afkCheck.runType.embed.color || "grey"}, black) !important;"><p class="left"><strong>${afkCheck.runType.runName}</strong> by <strong>${afkCheck.leaderNick}</strong></p><p class="mid">${Math.floor(afkCheck.timeLeft / 60) || 0}:${Math.round(afkCheck.timeLeft % 60) || 00}</p><p class="right">${afkCheck.vcSize || '0'}/${afkCheck.runType.vcCap || '0'}</p></div></a>`//${afkCheck.runType.vcCap || '0'}
     safk.append(safkTang)
 }
 function sRenderRun(afkCheck){
