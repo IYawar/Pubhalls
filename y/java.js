@@ -22,7 +22,7 @@ async function getdata() {
 }
 
 window.onload = leggo
-
+console.log("y")
 let afk = document.getElementById("afk")
 let run = document.getElementById("run")
 let safk = document.getElementById("safk")
