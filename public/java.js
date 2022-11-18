@@ -76,3 +76,4 @@ function sRenderRun(afkCheck){
     srun.append(srunTang)
 }
 }setInterval(leggo, 3000)
+console.log("public")
