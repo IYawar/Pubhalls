@@ -34,11 +34,9 @@ async function leggo() {
     
     for (let i of Object.values(data)) {
         if ( i.leader != null){
-        if (i.runType.embed.color != [])
         if (i.active === false) activeRun.push(i)
         else activeAfk.push(i)
-        }
-    }
+    }}
      afk.innerHTML = ""
      safk.innerHTML = ""
      run.innerHTML = ""
