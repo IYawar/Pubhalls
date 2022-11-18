@@ -379,6 +379,7 @@ h1 {
         grid-column-start: 4 !important;
         grid-row-start: 1 !important;
         grid-row-end: 3 !important;
+        overflow-y: auto !important;
     }
 
     .something {
@@ -581,8 +582,9 @@ h1 {
     .server-text{
         font-size: 1.5rem !important;
         text-align: center;
-        overflow: hidden;
+        overflow: hidden !important;
         margin-left: 17px !important;
+        padding-right: 15px !important;
         margin-bottom: 15px !important;
     }
     #something{
