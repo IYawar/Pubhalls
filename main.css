@@ -288,6 +288,9 @@ h1 {
     padding: 10px 10px 0 10px;
 }
 
+.news a{
+    text-decoration: none;
+}
 .something, .something a{
     text-align: center;
     text-decoration: none;
@@ -578,9 +581,15 @@ h1 {
         font-size: 1.5rem !important;
     }
 }
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 330px) {
     .server-img{
         width: 75px;
+    }
+    .biggus h3{
+        font-size: 1.2rem !important;
+    }
+    .biggus p{
+        font-size: 0.8em !important;
     }
 }
 p {
