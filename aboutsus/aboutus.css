@@ -144,7 +144,7 @@ h3{
     height: 80%;
     background-color: rgba(15, 17, 17, 0.5) ;
     margin: 0 2.5%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 Body {
@@ -201,7 +201,7 @@ h3{
     text-align: center;
     display: block;
     color: white;
-    padding: 10px 50px ;
+    padding: 20px 50px ;
 }
 
 ::-webkit-scrollbar{
