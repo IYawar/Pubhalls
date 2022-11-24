@@ -200,7 +200,7 @@ h1 {
 }
 @media only screen and (max-width: 400px){
     .video{
-        width: 350px;
+        width: 15rem;
         min-height: 225px !important;
     }
 }
