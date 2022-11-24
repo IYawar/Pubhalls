@@ -24,6 +24,9 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #440d55;
 }
+a:-webkit-any-link{
+    text-decoration: none !important;
+}
 body{
     overflow: auto !important;
 }
@@ -289,9 +292,7 @@ h1 {
     padding: 10px 10px 0 10px;
 }
 
-.newsA{
-    text-decoration: none;
-}
+
 .something, .something a{
     text-align: center;
     text-decoration: none;
