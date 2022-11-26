@@ -126,7 +126,7 @@ body{
     grid-column: span 2;
     grid-row-start: 1;
     grid-row-end: 4;
-    overflow-y: auto;
+    overflow-x:hidden;
 }
 
 .servers {
@@ -183,11 +183,16 @@ h1 {
 
 .server-section {
     text-decoration: none;
-    overflow-y: auto;
+    overflow: hidden
 }
 
 .server-img {
     margin-top: 10px;
+    overflow: hidden;
+}
+.server-img:hover{
+    transform: scale(1.1);
+    transition: ease-in-out 0.15s;
 }
 
 .dn {
@@ -227,6 +232,14 @@ h1 {
 .under{
     text-align: center;
 }
+.afk div{
+    overflow: hidden !important;
+    background-color: rgba(0, 0, 0, 0.0);
+}
+.runs div{
+    overflow: hidden !important;
+    background-color: rgba(0, 0, 0, 0.0);
+}
 .rbox {
     display: flex;
     background-color: rgba(65, 4, 122, 0.0) !important;
@@ -241,10 +254,13 @@ h1 {
 
 .rbox:hover{
     filter: brightness(150%);
-    transform: scale(1.02);
+    transform: scale(1.05);
+    transition: ease-in-out 0.15s;
 }
 .biggus:hover{
     filter: brightness(150%);
+    transform: scale(1.02);
+    transition: ease-in-out 0.15s;
 }
 
 .left {
@@ -276,20 +292,19 @@ h1 {
     border-top: 3px solid #270033;
     height: 135px;
     margin-top: 5px;
-    overflow: none;
 }
 
 .biggus h3{
     color: white;
     font-size: 2.0rem;
     text-align: left;
-    padding: 10px 10px 0 10px;
+    padding: 10px 15px 0 15px;
 }
 
 .biggus p{
     font-size: 1.5rem;
     text-align: left;
-    padding: 10px 10px 0 10px;
+    padding: 10px 15px 0 15px;
 }
 
 
