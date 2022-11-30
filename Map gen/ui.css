@@ -1,0 +1,354 @@
+
+
+.modal,
+.modal * {
+    touch-action: pan-y;
+}
+
+#map {
+    cursor: default;
+    width: 100vh;
+    height: 100vh;
+    max-width: calc(100vw - 260px);
+    max-height: calc(100vw - 260px);
+    min-height: 448px;
+    min-width: 448px;
+    margin-top: 0;
+    margin-bottom: 0;
+    touch-action: manipulation;
+    float: left;
+}
+
+#map:focus {
+    outline: none;
+}
+
+#map>canvas {
+    width: 100vh;
+    height: 95vh;
+    max-width: calc(100vw - 260px);
+    max-height: calc(100vw - 260px);
+    min-height: 448px;
+    min-width: 448px;
+    touch-action: manipulation;
+}
+
+#display {
+    float: left;
+    width: 220px;
+    height: 100vh;
+    padding-left: 19px;
+    padding-right: 19px;
+    max-height: calc(100vw - 260px);
+    background: hsl(0, 0%, 6.5%);
+    border-left: 1px solid hsl(0, 2%, 54%);
+    color: hsl(0, 0%, 80%);
+    min-height: 448px;
+}
+
+#display input {
+    margin-left: 50px;
+    margin-top: 20px;
+    max-height: min(52px, calc((100vh - 350px)/3));
+}
+
+@media only screen and (orientation: landscape) and (max-width: 400px) {
+    #display input {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+main>* {
+    float: left;
+}
+
+main {
+    margin: auto;
+    width: intrinsic;
+    /* Safari/WebKit uses a non-standard name */
+    width: -moz-max-content;
+    /* Firefox/Gecko */
+    width: -webkit-max-content;
+    /* Chrome */
+    height: intrinsic;
+    /* Safari/WebKit uses a non-standard name */
+    height: -moz-max-content;
+    /* Firefox/Gecko */
+    height: -webkit-max-content;
+    width: fit-content;
+    height: fit-content;
+    /* Chrome */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font: 20px Arial;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+main {}
+
+#display>div>div>div:first-child {
+    float: left;
+}
+
+#display>div>div>div:last-child {
+    float: right;
+}
+
+@media (orientation: portrait) {
+    #display {
+        height: 260px;
+        width: 100vw;
+        margin: 0;
+        border-left: none;
+        border-top: 1px solid hsl(0, 2%, 54%);
+        max-width: calc(100vh - 260px);
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        min-width: 448px;
+        min-height: 240px;
+    }
+    #display>div {
+        margin: 4px;
+        height: 20px;
+    }
+    #map {
+        height: calc(100vw);
+        width: calc(100vw);
+        max-height: calc(100vh - 260px);
+        max-width: calc(100vh - 260px);
+    }
+    #map>canvas {
+        height: calc(100vw);
+        width: calc(100vw);
+        max-width: calc(100vh - 260px);
+        max-height: calc(100vh - 260px);
+    }
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, .4);
+    font-size: 1.4em;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    color: white;
+}
+
+
+/* Modal Body */
+
+.modal-body {
+    padding: 2px 16px;
+    margin: 0 auto;
+}
+
+
+/* Modal Footer */
+
+.modal-footer {
+    padding: 2px 16px;
+    color: white;
+}
+
+#keybind-modal .modal-footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.modal-content {
+    background-color: hsl(0, 0%, 15%);
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border: 1px solid hsl(0, 0%, 20%);
+    width: max(80%, 400px);
+    height: max(80%, 400px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    overflow-y: auto;
+    color: #e8e8e8;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.setting-title td:first-child {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-top: 20px;
+    border-bottom: 2px solid green;
+    width: fit-content;
+}
+
+#settings-modal .modal-content {
+    width: min(600px, 95vw);
+}
+
+#keybind-modal .modal-content {
+    width: min(440px, 95vw);
+}
+
+td {
+    padding: 12px;
+}
+
+tr:not(.setting-title):not(:last-child) td {
+    border-bottom: 1px solid green;
+}
+
+td:last-child {
+    width: 120px;
+}
+
+td:last-child * {
+    float: right;
+}
+
+table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse
+}
+
+input[type="button"] {
+    padding: 8px;
+    width: 220px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 0;
+    border: 1px solid hsl(0, 0%, 25%);
+    background-color: hsl(0, 0%, 30%);
+    color: #d8d8d8;
+    outline: none;
+}
+
+#display input[type="button"] {
+    width: 220px;
+    font-size: 1.5em;
+    margin-left: 0;
+}
+
+input[type="button"]:hover {
+    border: 1px solid hsl(0, 0%, 30%);
+    background-color: hsl(0, 0%, 40%);
+    outline: none;
+    border-radius: 0;
+    color: white;
+}
+
+input[type="button"]:hover,
+input[type="button"]:active,
+.img-btn:hover {
+    border: 1px solid hsl(0, 0%, 40%);
+    background-color: hsl(0, 0%, 50%);
+    outline: none;
+    cursor: pointer;
+}
+
+.img-btn:hover {
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+.img-btn {
+    padding: 2px;
+    width: 62px;
+    height: 62px;
+    border-radius: 10%;
+    border: 1px solid hsl(0, 0%, 25%);
+    background-color: hsl(0, 0%, 30%);
+    outline: none;
+    margin: 4px;
+}
+
+.img-btn img {
+    width: 56px;
+    border-radius: 8%;
+}
+
+tr:not(.setting-title):hover {
+    background-color: rgba(255, 255, 255, .2);
+    cursor: pointer;
+}
+
+tr:not(.setting-title):hover input[type="button"] {
+    background-color: hsl(0, 0%, 50%);
+}
+
+input[type="color"] {
+    padding: 2px;
+    width: 120px;
+    height: 35px;
+}
+
+#settings-modal input[type="checkbox"] {
+    margin-right: 60px;
+    width: 18px;
+    height: 18px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#keybind-modal .modal-header h2::after {
+    content: attr(data-name);
+}
+
+#buttons {
+    display: inline-flex;
+    width: 100%;
+    max-width: 350px;
+    flex-wrap: wrap;
+    flex-basis: 2;
+    justify-content: space-between;
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,136 @@
+.d-pad {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+
+.d-pad .center {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, .3);
+    z-index: 99;
+}
+
+.d-pad {
+    touch-action: none;
+}
+
+.d-pad .center:hover,
+.d-pad .center {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.d-pad .arrow {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.d-pad .arrow::before {
+    position: absolute;
+    padding: 50px;
+    width: calc(100% - 150px - 1em);
+    box-shadow: 0 0 0 300px rgba(255, 255, 255, 0.075);
+    content: '';
+    z-index: -1;
+    margin: -50px;
+    border-radius: 50%;
+}
+
+.d-pad .arrow::after {
+    content: ' ';
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, .2);
+    position: absolute;
+}
+
+.d-pad .up {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%) rotate(45deg);
+}
+
+.d-pad .up.arrow::after {
+    transform: translate(75%, 75%);
+}
+
+.d-pad .up.arrow::before {
+    bottom: 0;
+    right: 0;
+}
+
+.d-pad .right {
+    top: 50%;
+    left: 50%;
+    transform: translate(20%, -50%) rotate(45deg);
+}
+
+.d-pad .right.arrow::before {
+    bottom: 0;
+    left: 0;
+}
+
+.d-pad .right.arrow::after {
+    transform: translate(200%, 75%);
+}
+
+.d-pad .left {
+    top: 50%;
+    right: 50%;
+    transform: translate(-20%, -50%) rotate(45deg);
+}
+
+.d-pad .left.arrow::before {
+    top: 0;
+    right: 0;
+}
+
+.d-pad .left.arrow::after {
+    transform: translate(75%, 200%);
+}
+
+.d-pad .down {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%) rotate(45deg);
+}
+
+.d-pad .down.arrow::after {
+    transform: translate(200%, 200%);
+}
+
+.d-pad * {
+    border: 1px solid rgba(255, 255, 255, .15);
+}
+
+.d-pad *:hover {
+    border-color: rgba(255, 255, 255, .3);
+}
+
+.d-pad *:active::before {
+    box-shadow: 0 0 0 300px rgba(255, 255, 255, 0.45);
+}
+
+.d-pad *:active::after {
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.d-pad.moving * {
+    border-color: rgba(255, 255, 255, .8) !important;
+}
+
+.d-pad.moving *::after {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+tr:not(.setting-title):hover {
+    background-color: rgba(255, 255, 255, .2);
+}
