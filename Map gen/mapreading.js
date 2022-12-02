@@ -530,7 +530,7 @@ class LHMap {
 
         ctx = ctx || this.canvas.getContext('2d');
 
-        ctx.fillStyle = "hsl(0, 0%, 6.5%)";
+        ctx.fillStyle = "black";
         ctx.fillRect(0, 0, 900, 900);
 
         var shiftx = this.rooms[8][0].isBorder ? 50 : 0;

@@ -139,11 +139,13 @@ h3{
     
 
 .box{
-    position: absolute;
+    position: relative;
     width: auto;
     height: auto;
-    background-color: rgba(15, 17, 17, 0.5) ;
+    margin: auto;
+    background-color: rgba(15, 17, 17, 0.0) ;
     overflow-y: hidden;
+    align-items: center;
 }
 
 Body {

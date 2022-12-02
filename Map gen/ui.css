@@ -7,16 +7,13 @@
 
 #map {
     cursor: default;
-    width: 100vh;
-    height: 100vh;
+    width: 80vh;
+    height: 80vh;
     max-width: calc(100vw - 260px);
     max-height: calc(100vw - 260px);
     min-height: 448px;
     min-width: 448px;
-    margin-top: 0;
-    margin-bottom: 0;
     touch-action: manipulation;
-    float: left;
 }
 
 #map:focus {
@@ -24,24 +21,25 @@
 }
 
 #map>canvas {
-    width: 100vh;
-    height: 95vh;
+    width: 79vh;
+    height: 79vh;
     max-width: calc(100vw - 260px);
     max-height: calc(100vw - 260px);
     min-height: 448px;
     min-width: 448px;
+    border: 1px solid hsl(0, 2%, 54%);
     touch-action: manipulation;
+    
 }
 
 #display {
     float: left;
-    width: 220px;
-    height: 100vh;
+    width: 250px;
+    height: 80vh;
     padding-left: 19px;
     padding-right: 19px;
     max-height: calc(100vw - 260px);
-    background: hsl(0, 0%, 6.5%);
-    border-left: 1px solid hsl(0, 2%, 54%);
+    background: rgba(0, 0, 0, 0.5);
     color: hsl(0, 0%, 80%);
     min-height: 448px;
 }
@@ -50,6 +48,13 @@
     margin-left: 50px;
     margin-top: 20px;
     max-height: min(52px, calc((100vh - 350px)/3));
+}
+
+#display h3{
+    padding-left: 0px;
+    padding-right: 10px;
+    font-size: 1.2em;
+    display: inline-block;
 }
 
 @media only screen and (orientation: landscape) and (max-width: 400px) {
@@ -82,16 +87,8 @@ main {
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
     font: 20px Arial;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
-
-main {}
 
 #display>div>div>div:first-child {
     float: left;
@@ -341,12 +338,21 @@ input[type="color"] {
 }
 
 #buttons {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     width: 100%;
     max-width: 350px;
+    height: 50%;
     flex-wrap: wrap;
-    flex-basis: 2;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+#dn{
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+#buttons button:hover{
+    transform: scale(1.15);
 }
 
 .modal-content::-webkit-scrollbar {
