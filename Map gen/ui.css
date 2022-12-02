@@ -21,12 +21,13 @@
 }
 
 #map>canvas {
-    width: 80vh;
-    height: 80vh;
+    width: 79vh;
+    height: 79vh;
     max-width: calc(100vw - 260px);
     max-height: calc(100vw - 260px);
     min-height: 448px;
     min-width: 448px;
+    border: 1px solid hsl(0, 2%, 54%);
     touch-action: manipulation;
     
 }
@@ -38,8 +39,7 @@
     padding-left: 19px;
     padding-right: 19px;
     max-height: calc(100vw - 260px);
-    background: hsl(0, 0%, 6.5%);
-    border-left: 1px solid hsl(0, 2%, 54%);
+    background: rgba(0, 0, 0, 0.5);
     color: hsl(0, 0%, 80%);
     min-height: 448px;
 }
@@ -88,10 +88,6 @@ main {
 
 body {
     font: 20px Arial;
-}
-
-main {
-    background-color: aqua !important;
 }
 
 #display>div>div>div:first-child {
@@ -342,12 +338,21 @@ input[type="color"] {
 }
 
 #buttons {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     width: 100%;
     max-width: 350px;
+    height: 50%;
     flex-wrap: wrap;
-    flex-basis: 2;
-    justify-content: space-between;
+    justify-content: space-evenly;
+}
+#dn{
+    grid-row-start: 1;
+    grid-column-start: 2;
+}
+#buttons button:hover{
+    transform: scale(1.15);
 }
 
 .modal-content::-webkit-scrollbar {
