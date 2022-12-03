@@ -73,7 +73,10 @@
                     </div>
                     <div id="buttons">
                         <button type="button" onclick="lhmap.setup()" class="img-btn" title="New Map" id="dn">
-                            <img src="images/map.png" alt="M" />
+                            <img src="images/map.png" alt="M" class="dn"/>
+                        </button>
+                        <button type="button" onclick="showImage(); lhmap.paint()" class="img-btn" title="Copy Map Image">
+                            <img src="images/save.png" alt="S" />
                         </button>
                         <button type="button" onclick="showImage(); lhmap.paint()" class="img-btn" title="Copy Map Image">
                             <img src="images/save.png" alt="S" />
@@ -96,7 +99,6 @@
                         <button type="button" data-for="#settings-modal" class="open-modal img-btn" title="Options">
                             <img src="images/settings.png" alt="O" data-for="#settings-modal"/>
                         </button>
-                    </div>
                     <div class="d-pad" draggable="true">
                         <a class="up arrow" onclick="lhmap.onUp(); lhmap.paint()"></a>
                         <a class="right arrow" onclick="lhmap.onRight(); lhmap.paint()"></a>

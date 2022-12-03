@@ -338,21 +338,23 @@ input[type="color"] {
 }
 
 #buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    display: inline-flex;
     width: 100%;
     max-width: 350px;
     height: 50%;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
-#dn{
-    grid-row-start: 1;
-    grid-column-start: 2;
-}
+
 #buttons button:hover{
     transform: scale(1.15);
+}
+#dn{
+    width: 100px;
+    height: 100px;
+}
+#dn img{
+    width: 10vh;
 }
 
 .modal-content::-webkit-scrollbar {
