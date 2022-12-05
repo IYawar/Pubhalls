@@ -346,12 +346,16 @@ input[type="color"] {
     justify-content: space-between;
 }
 
+
 #buttons button:hover{
     transform: scale(1.15);
 }
 #dn{
     width: 100px;
     height: 100px;
+    margin-left: 26.5%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 #dn img{
     width: 10vh;
