@@ -36,8 +36,8 @@
     float: left;
     width: 250px;
     height: 80vh;
-    padding-left: 19px;
-    padding-right: 19px;
+    padding-left: 10px;
+    padding-right: 10px;
     max-height: calc(100vw - 260px);
     background: rgba(0, 0, 0, 0.5);
     color: hsl(0, 0%, 80%);
@@ -98,6 +98,14 @@ body {
     float: right;
 }
 
+#dn{
+    width: 100px;
+    height: 100px;
+    margin-left: 26.5% !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
+
 @media (orientation: portrait) {
     #display {
         height: 260px;
@@ -131,6 +139,24 @@ body {
     body {
         overflow-x: hidden;
         overflow-y: hidden;
+    }
+    #buttons {
+        display: inline-flex;
+        width: 100%;
+        max-width: 350px;
+        flex-wrap: wrap;
+        flex-basis: 2;
+        justify-content: space-between;
+    }
+    #dn{
+        width: auto !important;
+        height: 56px !important;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    #dn img{
+        width: 56px !important;
     }
 }
 
@@ -341,7 +367,7 @@ input[type="color"] {
     display: inline-flex;
     width: 100%;
     max-width: 350px;
-    height: 50%;
+    height: 55%;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -350,13 +376,14 @@ input[type="color"] {
 #buttons button:hover{
     transform: scale(1.15);
 }
-#dn{
-    width: 100px;
-    height: 100px;
-    margin-left: 26.5%;
-    margin-top: 15px;
-    margin-bottom: 15px;
+
+button{
+    margin-top: 3px !important;
 }
+#sett{
+    margin-left: 36% !important;
+}
+
 #dn img{
     width: 10vh;
 }

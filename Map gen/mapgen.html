@@ -78,9 +78,6 @@
                         <button type="button" onclick="showImage(); lhmap.paint()" class="img-btn" title="Copy Map Image">
                             <img src="images/save.png" alt="S" />
                         </button>
-                        <button type="button" onclick="showImage(); lhmap.paint()" class="img-btn" title="Copy Map Image">
-                            <img src="images/save.png" alt="S" />
-                        </button>
                         <button type="button" onclick="lhmap.undo(); lhmap.paint()" class="img-btn" title="Undo">
                             <img src="images/undo.png" alt="Backspace" />
                         </button>
@@ -96,7 +93,7 @@
                         <button type="button" onclick="copyTextToClipboard(window.location.origin + window.location.pathname + '?map=' + lhmap.rooms.convert())" class="img-btn" title="Share Map">
                             <img src="images/share.png" alt="Share" />
                         </button>
-                        <button type="button" data-for="#settings-modal" class="open-modal img-btn" title="Options">
+                        <button type="button" data-for="#settings-modal" class="open-modal img-btn" title="Options" id="sett">
                             <img src="images/settings.png" alt="O" data-for="#settings-modal"/>
                         </button>
                     <div class="d-pad" draggable="true">
