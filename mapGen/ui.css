@@ -101,11 +101,16 @@ body {
 #dn{
     width: 100px;
     height: 100px;
-    margin-left: 26.5% !important;
+    margin-left: 65px !important;
     margin-top: 15px !important;
     margin-bottom: 15px !important;
 }
-
+#smol{
+    display: none;
+}
+#sett{
+    margin-left: 36% !important;
+}
 @media (orientation: portrait) {
     #display {
         height: 260px;
@@ -149,14 +154,17 @@ body {
         justify-content: space-between;
     }
     #dn{
-        width: auto !important;
-        height: 56px !important;
-        margin-left: 0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
+        display: none;
     }
-    #dn img{
-        width: 56px !important;
+    #smol{
+        display: inline-block;
+    }
+    .first-halls{
+        font-size: 0px
+    }
+    #sett{
+        justify-content: flex-end;
+        margin-left: 0 !important;
     }
 }
 
@@ -379,9 +387,6 @@ input[type="color"] {
 
 button{
     margin-top: 3px !important;
-}
-#sett{
-    margin-left: 36% !important;
 }
 
 #dn img{
