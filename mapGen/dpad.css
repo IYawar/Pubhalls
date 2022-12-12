@@ -1,7 +1,7 @@
 .d-pad {
     position: fixed;
-    width: 200px;
-    height: 200px;
+    width: 20vh;
+    height: 20vh;
     display: block;
 }
 
