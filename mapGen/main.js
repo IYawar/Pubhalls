@@ -13,6 +13,9 @@ function checkVisible(elm) {
     return (btmscreen > top) && (topscreen < bottom) && rghtscreen > right && leftscreen < left;
 }
 
+function droplist(){
+    document.getElementById("mydroplist").classList.toggle("show")
+}
 // Copy Text to Clipboard from https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
 function fallbackCopyTextToClipboard(text) {
     var textArea = document.createElement("textarea");

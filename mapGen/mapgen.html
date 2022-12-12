@@ -28,14 +28,16 @@
        <a href="../index.html">Home</a>
        <a href="../Faq/faq.html">FAQ</a>
        <a href="../guides/guides.html">Guides</a>
+       <a href="mapgen.html" class="current">Map-Gen</a>
     </div>
     <div class="small">
         <img src="../images/PubHallsLogo.png" alt="PubHallsLogo">
-        <button onclick="droplist()" class="dbut ">About-us<i class="fa fa-caret-down"></i></button>
+        <button onclick="droplist()" class="dbut ">Map-Gen</button>
         <div id="mydroplist" class="drop-content">
             <a href="../index.html">Home</a>
             <a href="../Faq/faq.html">FAQ</a> 
             <a href="../guides/guides.html">Guides</a>
+
         </div>
     </div>
     <h1 class="first-halls">Pub Halls</h1>
@@ -72,8 +74,11 @@
                         </div>
                     </div>
                     <div id="buttons">
-                        <button type="button" onclick="lhmap.setup()" class="img-btn" title="New Map" id="dn" class="dn">
-                            <img src="images/map.png" alt="M" class="dn"/>
+                        <button type="button" onclick="lhmap.setup()" class="img-btn" title="New Map" id="dn" >
+                            <img src="images/map.png" alt="M" />
+                        </button>
+                        <button type="button" onclick="lhmap.setup()" class="img-btn" title="New Map" id="smol" >
+                            <img src="images/map.png" alt="M" />
                         </button>
                         <button type="button" onclick="showImage(); lhmap.paint()" class="img-btn" title="Copy Map Image">
                             <img src="images/save.png" alt="S" />

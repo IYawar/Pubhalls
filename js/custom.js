@@ -131,3 +131,7 @@ particlesJS("bg", {
     requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
+
+  function droplist(){
+    document.getElementById("mydroplist").classList.toggle("show")
+}

@@ -131,14 +131,6 @@
         padding-left: 5% !important;
         padding-right: 5% !important;
     }
-    #buttons {
-        display: inline-flex;
-        width: 100%;
-        max-width: 350px;
-        flex-wrap: wrap;
-        flex-basis: 2;
-        justify-content: space-between;
-    }
     
 }
 h3{
