@@ -14,9 +14,9 @@ window.onclick = function(event) {
     }
 }
 
-let apiLink = "https://a.vibot.tech:3002/api/afkchecks"
+let apiLink = "http://a.vibot.tech:3002/api/afkchecks"
 async function getdata() {
-    const response = await fetch("https://a.vibot.tech:3002/api/afkchecks")
+    const response = await fetch("http://a.vibot.tech:3002/api/afkchecks")
     const data = await response.json()
     return data
 }
